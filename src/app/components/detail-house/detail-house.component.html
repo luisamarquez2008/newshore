@@ -1,0 +1,25 @@
+<div class="w-100 p-2 background-gray">
+  <label (click)="location.back()">Back</label>
+</div>
+
+<div>
+  <form [formGroup]="form">
+    <label>Buscar: </label>
+    <input placeholder="Escriba nombre para filtrar" formControlName="name" class="m-2 w-25">
+  </form>
+</div>
+<section>
+  <div class="row itemsBlock p-2">
+    <div *ngFor="let item of showCharacters" class="col-12 mb-1 d-flex content-center">
+      <div class="col-3 ">
+        <img [src]="item['image']" class="characters-image">
+      </div>
+      <div class="col-3 text-center">
+        <h1 class="color-gray">{{item['name']}}</h1>
+        <h2 class="color-gray-light m-0">Species: {{item['species']}}</h2>
+        <h2 class="color-gray-light m-0">Gender: {{item['gender']}}</h2>
+        <h2 class="color-gray-light m-0">Ancestry: {{item['ancestry']}}</h2>
+      </div>
+    </div>
+  </div>
+</section>
